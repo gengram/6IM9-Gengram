@@ -105,6 +105,21 @@
             color: #8A8A8A;
         }
     </style>
+    <script>
+        function includeHTML() {
+            const elements = document.querySelectorAll('[data-include]');
+            elements.forEach(el => {
+                fetch(el.getAttribute('data-include'))
+                        .then(response => response.text())
+                        .then(data => {
+                            el.innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading content:', error));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', includeHTML);
+    </script>
     <body style="background-color: #202020">
         <nav class="navbar bg-dark shadow-sm sticky-top navbar-expand-lg navbar-dark" style="padding: 1%;" style="">
             <div class="container-fluid" >
@@ -162,26 +177,36 @@
                     </div>
                 </div>
                 <div class="col-4 mt-5 text-light">
-                    <div class="mt-5">
-                        <h1>Boleto</h1>
-                        <h3 style="">Soda stereo</h3>
-                        <div class="mt-5">
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px"><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</p>
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px"><svg class="me-2" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h48v48H0V0z" id="a"></path></defs><clipPath id="b"><use overflow="visible" xlink:href="#a"></use></clipPath><path clip-path="url(#b)" d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z" fill="#8a8a8a" class="fill-000000"></path></svg>Asiento: 440B</p>
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</p>
+                    <h1 class="ms-5 mb-3">Boleto</h1>
+                    <div class="card cardE ms-5" style="width: 39rem; height: 17rem; background-color: #AF6FAF; ">
+                        <div class="row ms-3">
+                            <div class="col-6">
+                                <h3 class="mt-5 ms-3" style="color: #272727">Soda stereo</h3>
+                                <div class="mt-3 ms-3">
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><svg class="me-2" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h48v48H0V0z" id="a"></path></defs><clipPath id="b"><use overflow="visible" xlink:href="#a"></use></clipPath><path clip-path="url(#b)" d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z" fill="#fff" class="fill-000000"></path></svg>Asiento: 440B</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-3">
+                                <div class="card cardE ms-3 mt-4" style="width: 12rem; height: 12rem">
+                                    <img src="elements/img/qr.png" class="card-img" style="height: 12rem; width: 12rem;" alt="...">
+                                </div>
+                            </div>
                         </div>
-                        <div class="mt-2">
-                            <a href="validarBoleto.html"><button class="btn custom-bsign mt-3">Validar boleto</button></a>
-                            <a href="validarBoleto.html"><button class="btn custom-bsign mt-3">Validar Fan-ID</button></a>
-                        </div>
+                    </div>
+                    <div class="mt-2 ms-5">
+                        <a href="validarBoleto.html"><button class="btn custom-bsign mt-3 ms-1">Validar boleto</button></a>
+                        <a href="validarFanID.html"><button class="btn custom-bsign mt-3">Validar Fan-ID</button></a>
                     </div>
                 </div>
                 <div class="col-4 mt-5">
-                     <div class="card cardE ms-5 mt-5" style="width: 18rem; height: 18rem">
-                        <img src="elements/img/qr.png" class="card-img" style="height: 25rem" alt="...">
-                    </div>
+
                 </div>
             </div>
         </div>
+        <div data-include="crearFanID.html"></div>
+
     </body>
+    
 </html>
