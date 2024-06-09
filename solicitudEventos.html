@@ -104,7 +104,46 @@
         .inactive:hover {
             color: #8A8A8A;
         }
+
+        .btn-nav {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:hover {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:focus {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:active {
+            background-color: #4d5154;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .dropdown-toggle:after {
+            display: none;
+        }
     </style>
+    <script>
+        function includeHTML() {
+            const elements = document.querySelectorAll('[data-include]');
+            elements.forEach(el => {
+                fetch(el.getAttribute('data-include'))
+                        .then(response => response.text())
+                        .then(data => {
+                            el.innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading content:', error));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', includeHTML);
+    </script>
     <body style="background-color: #202020">
         <nav class="navbar bg-dark shadow-sm sticky-top navbar-expand-lg navbar-dark" style="padding: 1%;" style="">
             <div class="container-fluid" >
@@ -125,7 +164,7 @@
                             <button class="btn custom-b4 btn-sm me-3 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalLogin">
                                 <h6 class="ms-3 me-3 mt-1" style="font-size: 18px;">Iniciar sesi&oacute;n</h6>
                             </button>
-                            <button class="btn custom-bsign btn-sm me-5 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalSignin">
+                            <button class="btn custom-bsign btn-sm me-5 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalSignIn">
                                 <h6 class="ms-3 me-3 mt-1" style="font-size: 18px;">Crear cuenta</h6>
                             </button>
                         </div>
@@ -136,24 +175,63 @@
         </nav>
         <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
             <div class="row" style=" width: 65%">
-                <div class="col-4" >
+                <div class="col-2" >
                     <li class="nav-item me-5 ms-5">
-                        <a class="nav-link nav-L active" href="index.html">INICIO</a>
+                        <a class="nav-link nav-L active" aria-current="page" href="#inicio">INICIO</a>
                     </li>
                 </div>
-                <div class="col-4">
+                <div class="col-2">
                     <li class="nav-item ms-5">
-                        <a class="nav-link nav-L inactive" href="index.html#recomendados">EVENTOS</a>
+                        <a class="nav-link nav-L inactive" href="#eventos">EVENTOS</a>
                     </li>
                 </div>
-                <div class="col-4">
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <p class="btn btn-nav dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BOLETOS
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Solicitar</a></li>
+                                <li><a class="dropdown-item" href="#">Asignaci&oacute;n</a></li>
+                                <li><a class="dropdown-item" href="#">Compra</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <button class="btn btn-nav dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                                VALIDAR
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Fan-ID</a></li>
+                                <li><a class="dropdown-item" href="#">Boleto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2">
                     <li class="nav-item ms-5">
-                        <a class="nav-link nav-L inactive" href="index.html#entrada" >ENTRADA</a>
+                        <a class="nav-link nav-L inactive" href="#entrada" >ENTRADA</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <button class="btn btn-nav dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                                GESTIONAR
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Fan-ID</a></li>
+                                <li><a class="dropdown-item" href="#">Boleto</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </div>
             </div>
         </ul>
-
         <div class="container">
             <div class="row mt-5">
                 <div class="col-1 mt-5"></div>
@@ -164,9 +242,11 @@
                         de la popularidad de Soda Stereo.
                     <div class="mb-3 text-start">
                         <label for="exampleFormControlInput1" class="form-label text-light">N&uacute;mero de boletos</label>
-                        <input type="texto" class="form-control text-light  bg-dark" placeholder="name@example.com" style=" border-color: #8A8A8A">
+                        <input type="texto" class="form-control text-light  bg-dark" placeholder="name@example.com" style=" border-color: #8A8A8A" required="true">
                     </div>
-                    <input type="submit" value="Enviar solicitud" class="fw-bold w-100 mb-2 btn btn-lg rounded-3 custom-bsign">
+                    <a href="asignacionBoletos.html">
+                        <input type="submit" value="Enviar solicitud" class="fw-bold w-100 mb-2 btn btn-lg rounded-3 custom-bsign">
+                    </a>
                 </div>
                 <div class="col-2 mt-5"></div>
                 <div class="col-5 mt-5 text-end">
@@ -176,5 +256,8 @@
                 </div>
             </div>
         </div>
+        <div data-include="crearFanID.html"></div>
+
     </body>
+
 </html>
