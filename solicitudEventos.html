@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="elements/img/evently_ticket.png">
+        <title>Evently | Evento</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        .font-gothic-a1 {
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 100;
+        }
+
+        .custom-b4{
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #2A2A2A; /* Color del contorno */
+            background-color: #2A2A2A; /* Fondo  */
+            color: #fff; /* Color del texto */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .custom-b4:hover {
+            background-color: #fff; /* Cambiar el color de fondo al pasar el ratón */
+            color: #000; /* Cambiar el color del texto al pasar el ratón */
+            border: 2px solid #000; /* Color del contorno */
+        }
+
+        .custom-bsign{
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #5D5AE3; /* Color del contorno */
+            background-color: #5D5AE3; /* Fondo  */
+            color: #fff; /* Color del texto */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .custom-bsign:hover {
+            background-color: #2A2A2A; /* Cambiar el color de fondo al pasar el ratón */
+            color: #5D5AE3; /* Cambiar el color del texto al pasar el ratón */
+            border: 2px solid #5D5AE3/* Color del contorno */
+        }
+
+        .bg-dark{
+            background-color: #131313
+        }
+
+        .background-image {
+            background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+            background-position: center; /* Centra la imagen */
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .cardE {
+            position: relative; /* Necesario para posicionar el botón dentro de la tarjeta */
+            overflow: hidden; /* Asegura que el contenido no se desborde */
+            width: 12rem;
+            height: 16.8rem;
+        }
+        .btn-position {
+            position: absolute;
+            top: 80%; /* Posición en la mitad vertical */
+            left: 0; /* Posición a la izquierda */
+            transform: translateY(-50%); /* Centramos el botón verticalmente */
+            z-index: 5; /* Asegura que el botón esté sobre la imagen */
+            display: none; /* Oculta el botón por defecto */
+            width: 100%; /* Ancho del botón igual al de la tarjeta */
+            text-align: center; /* Centrar el texto del botón */
+        }
+        .cardE:hover .btn-position {
+            display: block; /* Muestra el botón cuando el ratón está sobre la tarjeta */
+        }
+
+        .active{
+            color: #fff;
+        }
+
+        .inactive{
+            color: #8A8A8A;
+        }
+
+        .active:hover {
+            color: #fff;
+        }
+
+        .inactive:hover {
+            color: #8A8A8A;
+        }
+
+        .btn-nav {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:hover {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:focus {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:active {
+            background-color: #4d5154;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .dropdown-toggle:after {
+            display: none;
+        }
+    </style>
+    <script>
+        function includeHTML() {
+            const elements = document.querySelectorAll('[data-include]');
+            elements.forEach(el => {
+                fetch(el.getAttribute('data-include'))
+                        .then(response => response.text())
+                        .then(data => {
+                            el.innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading content:', error));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', includeHTML);
+    </script>
+    <body style="background-color: #202020">
+        <nav class="navbar bg-dark shadow-sm sticky-top navbar-expand-lg navbar-dark" style="padding: 1%;" style="">
+            <div class="container-fluid" >
+                <!-- Logo Memorand -->
+                <a href="index.html" class="navbar-brand" style="margin-left: 14%;">
+                    <img src="elements/img/evently_1.png" alt="evently" width="200">
+                </a>
+
+                <!-- Botón para mostrar el menú en dispositivos móviles -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Modal de inicio de sesión -->
+                <div class="me-5">
+                    <div class="me-5">
+                        <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent" >
+                            <button class="btn custom-b4 btn-sm me-3 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                <h6 class="ms-3 me-3 mt-1" style="font-size: 18px;">Iniciar sesi&oacute;n</h6>
+                            </button>
+                            <button class="btn custom-bsign btn-sm me-5 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalSignIn">
+                                <h6 class="ms-3 me-3 mt-1" style="font-size: 18px;">Crear cuenta</h6>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+       <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
+            <div class="row" style=" width: 65%">
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <a class="nav-link nav-L active" aria-current="page" href="index.html">INICIO</a>
+                    </li>
+                </div>
+                <div class="col-2">
+                    <li class="nav-item ms-5">
+                        <a class="nav-link nav-L inactive" href="eventos.html">EVENTOS</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <p class="btn btn-nav dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BOLETOS
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="eventos.html">Solicitar</a></li>
+                                <li><a class="dropdown-item" href="asignacionBoletos.html">Asignaci&oacute;n</a></li>
+                                <li><a class="dropdown-item" href="compraBoletos.html">Compra</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <button class="btn btn-nav dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                                VALIDAR
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="validarBoleto.html">Boleto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2">
+                    <li class="nav-item ms-5">
+                        <a class="nav-link nav-L inactive" href="boletos.html" >ENTRADA</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <a class="nav-link nav-L inactive" href="gestionar.html">GESTIONAR</a>
+                    </li>
+                </div>
+            </div>
+        </ul>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-1 mt-5"></div>
+                <div class="col-4 mt-5">
+                    <h3 class="text-light">Descripci&oacute;n</h3>
+                    <p  class="mt-4 text-light" style="font-weight: 100">Soda Stereo fue una de las bandas argentinas de pop/rock de los 80 y principios de los 90. Creada como trío en 1982, la banda estaba formada por el guitarrista y vocalista Gustavo Cerati, el bajista Zeta Bosio (nacido Héctor Bosio) y el batería Charly Alberti (nacido Carlos
+                        Ficcichia). Su influencia se extendió al resto de América Latina durante el apogeo de la banda. Durante el apogeo de la banda, y una exitosa reunión en 2007 demostró la
+                        de la popularidad de Soda Stereo.
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label text-light">N&uacute;mero de boletos</label>
+                        <input type="texto" class="form-control text-light  bg-dark" placeholder="name@example.com" style=" border-color: #8A8A8A" required="true">
+                    </div>
+                    <a href="asignacionBoletos.html">
+                        <input type="submit" value="Enviar solicitud" class="fw-bold w-100 mb-2 btn btn-lg rounded-3 custom-bsign">
+                    </a>
+                </div>
+                <div class="col-2 mt-5"></div>
+                <div class="col-5 mt-5 text-end">
+                    <div class="card cardE ms-5" style="width: 18rem; height: 25rem">
+                        <img src="elements/portadas/e18.jpg" class="card-img" style="height: 25rem" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-include="signin_login.html"></div>
+
+    </body>
+
+</html>
