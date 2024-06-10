@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="elements/img/evently_ticket.png">
+        <title>Evently | Evento</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        .font-gothic-a1 {
+            font-family: 'Gothic A1', sans-serif;
+            font-weight: 100;
+        }
+
+        .custom-b4{
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #2A2A2A; /* Color del contorno */
+            background-color: #2A2A2A; /* Fondo  */
+            color: #fff; /* Color del texto */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .custom-b4:hover {
+            background-color: #fff; /* Cambiar el color de fondo al pasar el ratón */
+            color: #000; /* Cambiar el color del texto al pasar el ratón */
+            border: 2px solid #000; /* Color del contorno */
+        }
+
+        .custom-bsign{
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #5D5AE3; /* Color del contorno */
+            background-color: #5D5AE3; /* Fondo  */
+            color: #fff; /* Color del texto */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .custom-bsign:hover {
+            background-color: #2A2A2A; /* Cambiar el color de fondo al pasar el ratón */
+            color: #5D5AE3; /* Cambiar el color del texto al pasar el ratón */
+            border: 2px solid #5D5AE3/* Color del contorno */
+        }
+
+        .bg-dark{
+            background-color: #131313
+        }
+
+        .background-image {
+            background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+            background-position: center; /* Centra la imagen */
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .cardE {
+            position: relative; /* Necesario para posicionar el botón dentro de la tarjeta */
+            overflow: hidden; /* Asegura que el contenido no se desborde */
+            width: 12rem;
+            height: 16.8rem;
+        }
+        .btn-position {
+            position: absolute;
+            top: 80%; /* Posición en la mitad vertical */
+            left: 0; /* Posición a la izquierda */
+            transform: translateY(-50%); /* Centramos el botón verticalmente */
+            z-index: 5; /* Asegura que el botón esté sobre la imagen */
+            display: none; /* Oculta el botón por defecto */
+            width: 100%; /* Ancho del botón igual al de la tarjeta */
+            text-align: center; /* Centrar el texto del botón */
+        }
+        .cardE:hover .btn-position {
+            display: block; /* Muestra el botón cuando el ratón está sobre la tarjeta */
+        }
+
+        .active{
+            color: #fff;
+        }
+
+        .inactive{
+            color: #8A8A8A;
+        }
+
+        .active:hover {
+            color: #fff;
+        }
+
+        .inactive:hover {
+            color: #8A8A8A;
+        }
+
+        .btn-nav {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:hover {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:focus {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:active {
+            background-color: #4d5154;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .dropdown-toggle:after {
+            display: none;
+        }
+    </style>
+    <script>
+        function includeHTML() {
+            const elements = document.querySelectorAll('[data-include]');
+            elements.forEach(el => {
+                fetch(el.getAttribute('data-include'))
+                        .then(response => response.text())
+                        .then(data => {
+                            el.innerHTML = data;
+                        })
+                        .catch(error => console.error('Error loading content:', error));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', includeHTML);
+    </script>
+    <body style="background-color: #202020">
+        <nav class="navbar bg-dark shadow-sm sticky-top navbar-expand-lg navbar-dark" style="padding: 1%;" style="">
+            <div class="container-fluid" >
+                <!-- Logo Memorand -->
+                <a href="index.html" class="navbar-brand" style="margin-left: 14%;">
+                    <img src="elements/img/evently_1.png" alt="evently" width="200">
+                </a>
+
+                <!-- Botón para mostrar el menú en dispositivos móviles -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Modal de inicio de sesión -->
+                <div class="me-5">
+                    <div class="me-5">
+                        <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent" >
+                            <button class="btn custom-b4 btn-sm me-3 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                <h6 class="ms-3 me-3 mt-1" style="font-size: 18px;">Iniciar sesi&oacute;n</h6>
+                            </button>
+                            <button class="btn custom-bsign btn-sm me-5 fs-5 border-opacity-25 rounded-4" data-bs-toggle="modal" data-bs-target="#modalSignIn">
+                                <h6 class="ms-3 me-3 mt-1" style="font-size: 18px;">Crear cuenta</h6>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
+            <div class="row" style=" width: 65%">
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <a class="nav-link nav-L active" aria-current="page" href="index.html">INICIO</a>
+                    </li>
+                </div>
+                <div class="col-2">
+                    <li class="nav-item ms-5">
+                        <a class="nav-link nav-L inactive" href="eventos.html">EVENTOS</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <p class="btn btn-nav dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BOLETOS
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="eventos.html">Solicitar</a></li>
+                                <li><a class="dropdown-item" href="asignacionBoletos.html">Asignaci&oacute;n</a></li>
+                                <li><a class="dropdown-item" href="compraBoletos.html">Compra</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <button class="btn btn-nav dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                                VALIDAR
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="validarBoleto.html">Boleto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2">
+                    <li class="nav-item ms-5">
+                        <a class="nav-link nav-L inactive" href="boletos.html" >ENTRADA</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <a class="nav-link nav-L inactive" href="gestionar.html">GESTIONAR</a>
+                    </li>
+                </div>
+            </div>
+        </ul>
+        <div class="container">
+            <div class="row mt-5">
+                <h1 class="text-light mt-3 mb-4">Compra de boletos</h1>
+                <div class="col-1">
+                    <div class="card cardE ms-5" style="width: 4rem; height: 6rem">
+                        <img src="elements/portadas/e18.jpg" class="card-img" style="height: 6.6rem" alt="...">
+                    </div>
+                </div>
+                <div class="col-11 text-light">
+                    <div class="ms-4">
+                        <div class="ms-5 mt-3">
+                            <h4 style="font-weight: 100">Soda Stereo</h4>
+                            <p style="color: #8A8A8A; font-size: 20px">
+                                <text class=""><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</text> 
+                                <text class="ms-5"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</text>
+                                <text class="ms-5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i></text>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 mb-4">
+                <div class="col-12 mt-5">
+                    <div class="row g-5 mb-5">
+                        <div class="col-6 order-md-last">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                        <span style="color: #5D5AE3">Tus Boletos</span>
+                                        <span style="background-color: #5D5AE3" class="badge rounded-pill">5</span>
+                                    </h4>
+                                    <ul class="list-group mb-3 text-light">
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm">
+                                            <div>
+                                                <h6 class="my-0 text-light">Soda Stereo - A123 </h6>
+                                                <small class="text-light">B&aacute;sico</small>
+                                            </div>
+                                            <span class="text-light">$1500</span>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div>
+                                                <h6 class="my-0 text-light">Soda Stereo - A124 </h6>
+                                                <small class="text-light">B&aacute;sico</small>
+                                            </div>
+                                            <span class="text-light">$1500</span>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div>
+                                                <h6 class="my-0 text-light">Soda Stereo - A125 </h6>
+                                                <small class="text-light">B&aacute;sico</small>
+                                            </div>
+                                            <span class="text-light">$1500</span>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div>
+                                                <h6 class="my-0 text-light">Soda Stereo - A126 </h6>
+                                                <small class="text-light">B&aacute;sico</small>
+                                            </div>
+                                            <span class="text-light">$1500</span>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div>
+                                                <h6 class="my-0 text-light">Soda Stereo - A127 </h6>
+                                                <small class="text-light">B&aacute;sico</small>
+                                            </div>
+                                            <span class="text-light">$1500</span>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between ">
+                                            <span style="color: #5D5AE3">Total (MXN)</span>
+                                            <small class="text-light">B&aacute;sico</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-group mb-3 text-light rounded-3">
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span style="color: #5D5AE3">Validar Fan-ID</span>
+                                        </h4>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-s">
+                                            <div class="my-0">
+                                                <input class="form-control form-control-dark text-light bg-dark" type="file" id="formFile">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div class="my-0">
+                                                <input class="form-control form-control-dark text-light bg-dark" type="file" id="formFile">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div class="my-0">
+                                                <input class="form-control form-control-dark text-light bg-dark" type="file" id="formFile">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div class="my-0">
+                                                <input class="form-control form-control-dark text-light bg-dark" type="file" id="formFile">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-dark d-flex justify-content-between lh-sm text-light">
+                                            <div class="my-0">
+                                                <input class="form-control form-control-dark text-light bg-dark" type="file" id="formFile">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+                            <h4 class="mb-3  text-light">Direcci&oacute;n de facturaci&oacute;n</h4>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="firstName" class="form-label  text-light">Nombre</label>
+                                    <input type="text" class="form-control text-light  bg-dark" id="firstName" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label  text-light">Apellidos</label>
+                                    <input type="text" class="form-control text-light  bg-dark" id="lastName" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="username" class="form-label  text-light">Nombre de usuario</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text text-light  bg-dark">@</span>
+                                        <input type="text" class="form-control text-light  bg-dark" id="username" placeholder="Username" required>
+                                        <div class="invalid-feedback">
+                                            Your username is required.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="email" class="form-label text-light">Correo electr&oacute;nico<span class="text-body-secondary">(Optional)</span></label>
+                                    <input type="email" class="form-control text-light  bg-dark" id="email" placeholder="you@example.com">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="address" class="form-label text-light">Direcci&oacute;n</label>
+                                    <input type="text" class="form-control text-light  bg-dark" id="address" placeholder="1234 Main St" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your shipping address.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <label for="country" class="form-label text-light">Pa&iacute;s</label>
+                                    <select class="form-select text-light  bg-dark" id="country" required>
+                                        <option value="">Selecciona...</option>
+                                        <option>M&eacute;xico</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="state" class="form-label text-light">Estado</label>
+                                    <select class="form-select text-light  bg-dark" id="state" required>
+                                        <option value="">Selecciona...</option>
+                                        <option>CDMX</option>
+                                        <option>EDO. MEX</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="zip" class="form-label text-light">C.P</label>
+                                    <input type="text" class="form-control text-light  bg-dark" id="zip" placeholder="" required>
+                                </div>
+                            </div>
+
+                            <hr class="my-4 text-light">
+
+                            <h4 class="mb-3 text-light">Pago</h4>
+
+                            <div class="my-3">
+                                <div class="form-check">
+                                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input bg-dark" checked required>
+                                    <label class="form-check-label text-light" for="credit">Tarjeta de cr&eacute;dito</label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input bg-dark" required>
+                                    <label class="form-check-label text-light" for="debit">Tarjeta de d&eacute;bito</label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input bg-dark" required>
+                                    <label class="form-check-label text-light" for="paypal">PayPal</label>
+                                </div>
+                            </div>
+
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <label for="cc-name" class="form-label text-light">Nombre de la tarjeta</label>
+                                    <input type="text" class="form-control text-light bg-dark" id="cc-name" placeholder="" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="cc-number" class="form-label text-light">N&uacute;mero de tarjeta de cr&eacute;tido</label>
+                                    <input type="text" class="form-control  text-light bg-dark" id="cc-number" placeholder="" required>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="cc-expiration" class="form-label text-light">Expiraci&oacute;n</label>
+                                    <input type="text" class="form-control  text-light bg-dark" id="cc-expiration" placeholder="" required>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="cc-cvv" class="form-label text-light">CVV</label>
+                                    <input type="text" class="form-control  text-light bg-dark" id="cc-cvv" placeholder="" required>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <a href="boletos.html">
+                                <button class="w-100 btn rounded-3 custom-bsign" type="submit">Pagar</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="col-5 mt-5">
+                    <div class="card cardE ms-5" style="width: 100%; height: 100%; background-color: transparent">
+                        <img src="elements/img/pago.png" class="card-img border-0" style="height: 100%; background-color: #202020; border-color: transparent" alt="...">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div data-include="signin_login.html"></div>
+
+    </body>
+
+</html>
