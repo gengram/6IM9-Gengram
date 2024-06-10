@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="elements/img/evently_ticket.png">
-        <title>Evently</title>
+        <title>Evently | Evento</title>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
-
     </head>
     <style>
         .font-gothic-a1 {
@@ -106,6 +105,44 @@
             color: #8A8A8A;
         }
 
+        .loader {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader::before,
+        .loader::after {
+            position: absolute;
+            content: "";
+            height: 18em;
+            width: 18em;
+            border: 1em solid #AF6FAF;
+            border-radius: 50%;
+            animation: loader_79178 2s linear infinite;
+        }
+
+        .loader::after {
+            opacity: 0;
+            animation-delay: 1s;
+        }
+
+        @keyframes loader_79178 {
+            0% {
+                border: 1em solid #AF6FAF;
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                border: 0 solid #AF6FAF;
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        
         .btn-nav {
             background-color: transparent;
             color: #8A8A8A;
@@ -174,16 +211,16 @@
 
             </div>
         </nav>
-        <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
+       <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
             <div class="row" style=" width: 65%">
                 <div class="col-2" >
                     <li class="nav-item me-5 ms-5">
-                        <a class="nav-link nav-L active" aria-current="page" href="#inicio">INICIO</a>
+                        <a class="nav-link nav-L active" aria-current="page" href="index.html">INICIO</a>
                     </li>
                 </div>
                 <div class="col-2">
                     <li class="nav-item ms-5">
-                        <a class="nav-link nav-L inactive" href="#eventos">EVENTOS</a>
+                        <a class="nav-link nav-L inactive" href="eventos.html">EVENTOS</a>
                     </li>
                 </div>
                 <div class="col-2" >
@@ -214,7 +251,7 @@
                 </div>
                 <div class="col-2">
                     <li class="nav-item ms-5">
-                        <a class="nav-link nav-L inactive" href="#entrada" >ENTRADA</a>
+                        <a class="nav-link nav-L inactive" href="boletos.html" >ENTRADA</a>
                     </li>
                 </div>
                 <div class="col-2" >
@@ -224,148 +261,62 @@
                 </div>
             </div>
         </ul>
+
         <div class="container">
-            <div id="inicio">
-                <div class="row mt-4">
-                    <div class="col-12 mt-5 text-start" >
-                        <div class="card border-0" style="height: 450px">
-                            <div class="card-body" style="background-image: url('elements/img/in_ev.png');" >
-                                <div class="ms-3">
-                                    <h1 class="text-light mt-4">Accede a</h1>
-                                    <h1 class="text-light">los eventos</h1>
-                                    <h1 class="text-light">que m&aacute;s te</h1>
-                                    <h1 class="text-light">gustan.</h1>
-                                    <a href="eventos.html"><button class="btn custom-bsign me-2 mt-4">Pr&oacute;ximos eventos</button></a>
-                                    <a href="#entrada"><button class="btn custom-b4 mt-4">Validar mi entrada</button></a>
+            <div class="row mt-5">
+                <div class="col-4 mt-5 text-light">
+                    <h1 class="ms-5 mb-3">Fan-ID</h1>
+                    <div class="card cardE ms-5" style="width: 39rem; height: 17rem; background-color: #AF6FAF; ">
+                        <div class="row ms-3">
+                            <div class="col-6">
+                                <div class="mt-5 ms-3">
+                                    <p class="mb-1" style="color: #fff; font-size: 17px">Nombre: Carlos Mart&iacute;nez L&oacute;pez</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 17px">Fecha de nacimiento: 2 de enero de 1985</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 17px">CURP: MALC850102HDFRRL08</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 17px">Direcci&oacute;n: Calle Falsa 123, Colonia Inventada,CDMX</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-3">
+                                <div class="card cardE ms-3 mt-4" style="width: 12rem; height: 12rem">
+                                    <img src="elements/img/qr.png" class="card-img" style="height: 12rem; width: 12rem;" alt="...">
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-            </div>
-            <div id="eventos">
-                <div class="row mt-5 ms-3">
-                    <div class="col-7">
-                        <h3 style="color: #fff; font-size: 40px; font-weight: 600;">Pr&oacute;ximos eventos</h3>
-                    </div>
-                    <div class="col-5 text-end mt-3">
-                        <p style="color: #5D5AE3; font-size: 20px;"><a href='eventos.html' style="color: #5D5AE3;  text-decoration: none;">M&aacute;s<i class="bi bi-chevron-right me-1"></i></a></p>
+                    <div class="mt-2 ms-5">
+                        <button id="showButton" class="btn custom-bsign mt-3 ms-1">Validar Fan-ID</button>
                     </div>
                 </div>
+                <div class="col-4 mt-5">
 
-                <div class="row mt-3 ms-3 mb-4">
-                    <div class="col-3">
-                        <div class="card cardE border-light" style="width: 12rem; height: 16.8rem">
-                            <img src="elements/portadas/e1.jpg" class="card-img" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card cardE" style="width: 12rem; height: 16.9rem">
-                            <img src="elements/portadas/e2.jpg" class="card-img" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card cardE" style="width: 12rem; height: 16.8rem">
-                            <img src="elements/portadas/e3.jpg" class="card-img" style="height: 16.6rem" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card cardE" style="width: 12rem; height: 16.8rem; position: relative;">
-                            <img src="elements/portadas/e4.jpg" class="card-img" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="row mt-5 ms-3 mb-5">
-                    <div class="col-3">
-                        <div class="card cardE border-light" style="width: 12rem; height: 16.8rem">
-                            <img src="elements/portadas/e5.jpg" class="card-img" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card cardE" style="width: 12rem; height: 16.9rem">
-                            <img src="elements/portadas/e6_1.jpg" class="card-img" alt="..." style="height: 16.6rem">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card cardE" style="width: 12rem; height: 16.8rem">
-                            <img src="elements/portadas/e7.jpg" class="card-img" style="height: 16.6rem" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card cardE" style="width: 12rem; height: 16.8rem; position: relative;">
-                            <img src="elements/portadas/e8.jpg" class="card-img" alt="...">
-                            <a href="evento.html"><button class="btn custom-bsign btn-position">M&aacute;s informaci&oacute;n</button></a>
-                        </div>
+                <div class="col-4 " style="margin-top: 7rem">
+                    <div class="loader" style="display: none; margin-left: 5.5rem"></div>
+                    <div class="row ms-3">
+                        <div class="message text-light mt-5 ms-5" style="display: none"><h1 class="mt-2 ms-3">Fan-ID valido</h1></div>
                     </div>
                 </div>
             </div>
-
-            <div id="entrada">
-                <div class="row ms-3">
-                    <div class="col-12">
-                        <h3 style="color: #fff; font-size: 40px; font-weight: 600;">Validar mi entrada</h3>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <p class="font-gothic-a1" style="color: #fff; font-size: 30px;">Inicia sesi&oacute;n con tu cuenta</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row ms-3 mt-3 mb-5">
-                    <div class="col-4">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label text-light">Email address</label>
-                            <input type="email" class="form-control text-light" placeholder="name@example.com" style="background-color: #272727; border-color: #8A8A8A">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <label for="inputPassword5" class="form-label text-light">Password</label>
-                        <input type="password" class="form-control text-light" aria-describedby="passwordHelpBlock" style="background-color: #272727; border-color: #8A8A8A">
-                    </div>
-                    <div class="col-4">
-                        <a href="boletos.html"><button class="btn custom-bsign me-2" style="margin-top: 2rem">Iniciar sesi&oacute;n</button></a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
-        <div data-include="signin_login.html"></div>
+       <div data-include="signin_login.html"></div>
 
     </body>
-    <script>
-        // Obtiene todos los enlaces de navegación
-        const navLinks = document.querySelectorAll('.nav-link');
 
-        // Agrega un evento clic a cada enlace
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Quita la clase 'active' de todos los enlaces
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    // Agrega la clase 'inactive' a los enlaces que no tienen la clase 'active'
-                    if (!link.classList.contains('active')) {
-                        link.classList.add('inactive');
-                    }
-                });
-                // Agrega la clase 'active' solo al enlace clicado
-                link.classList.add('active');
-                // Quita la clase 'inactive' del enlace clicado
-                link.classList.remove('inactive');
-            });
+    <script>
+        document.getElementById('showButton').addEventListener('click', function () {
+            var loader = document.querySelector('.loader');
+            var message = document.querySelector('.message');
+
+            // Muestra el loader
+            loader.style.display = 'block';
+            message.style.display = 'none';
+
+            // Espera 3 segundos
+            setTimeout(function () {
+                // Oculta el loader y muestra el mensaje
+                loader.style.display = 'none';
+                message.style.display = 'block';
+            }, 2500);
         });
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>
