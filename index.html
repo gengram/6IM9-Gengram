@@ -105,6 +105,30 @@
         .inactive:hover {
             color: #8A8A8A;
         }
+
+        .btn-nav {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:hover {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:focus {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:active {
+            background-color: #4d5154;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .dropdown-toggle:after {
+            display: none;
+        }
     </style>
     <script>
         function includeHTML() {
@@ -152,19 +176,50 @@
         </nav>
         <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
             <div class="row" style=" width: 65%">
-                <div class="col-4" >
+                <div class="col-2" >
                     <li class="nav-item me-5 ms-5">
                         <a class="nav-link nav-L active" aria-current="page" href="#inicio">INICIO</a>
                     </li>
                 </div>
-                <div class="col-4">
+                <div class="col-2">
                     <li class="nav-item ms-5">
                         <a class="nav-link nav-L inactive" href="#eventos">EVENTOS</a>
                     </li>
                 </div>
-                <div class="col-4">
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <p class="btn btn-nav dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BOLETOS
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="eventos.html">Solicitar</a></li>
+                                <li><a class="dropdown-item" href="asignacionBoletos.html">Asignaci&oacute;n</a></li>
+                                <li><a class="dropdown-item" href="compraBoletos.html">Compra</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <button class="btn btn-nav dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                                VALIDAR
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="validarBoleto.html">Boleto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2">
                     <li class="nav-item ms-5">
                         <a class="nav-link nav-L inactive" href="#entrada" >ENTRADA</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <a class="nav-link nav-L inactive" href="gestionar.html">GESTIONAR</a>
                     </li>
                 </div>
             </div>
@@ -180,7 +235,7 @@
                                     <h1 class="text-light">los eventos</h1>
                                     <h1 class="text-light">que m&aacute;s te</h1>
                                     <h1 class="text-light">gustan.</h1>
-                                    <a href="asignacionBoletos.html"><button class="btn custom-bsign me-2 mt-4">Pr&oacute;ximos eventos</button></a>
+                                    <a href="eventos.html"><button class="btn custom-bsign me-2 mt-4">Pr&oacute;ximos eventos</button></a>
                                     <a href="#entrada"><button class="btn custom-b4 mt-4">Validar mi entrada</button></a>
                                 </div>
                             </div>
@@ -195,7 +250,7 @@
                         <h3 style="color: #fff; font-size: 40px; font-weight: 600;">Pr&oacute;ximos eventos</h3>
                     </div>
                     <div class="col-5 text-end mt-3">
-                        <p style="color: #5D5AE3; font-size: 20px;"><a id="backLink" href='' style="color: #5D5AE3;  text-decoration: none;">M&aacute;s<i class="bi bi-chevron-right me-1"></i></a></p>
+                        <p style="color: #5D5AE3; font-size: 20px;"><a href='eventos.html' style="color: #5D5AE3;  text-decoration: none;">M&aacute;s<i class="bi bi-chevron-right me-1"></i></a></p>
                     </div>
                 </div>
 
@@ -261,7 +316,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-12">
-                            <p class="font-gothic-a1" style="color: #fff; font-size: 30px;">Inicia sesi&oacute;n con tu cuenta y Fan-ID</p>
+                            <p class="font-gothic-a1" style="color: #fff; font-size: 30px;">Inicia sesi&oacute;n con tu cuenta</p>
                         </div>
                     </div>
                 </div>
@@ -277,14 +332,14 @@
                         <input type="password" class="form-control text-light" aria-describedby="passwordHelpBlock" style="background-color: #272727; border-color: #8A8A8A">
                     </div>
                     <div class="col-4">
-                        <a href="entradaEvento.html"><button class="btn custom-bsign me-2" style="margin-top: 2rem">Iniciar sesi&oacute;n</button></a>
+                        <a href="boletos.html"><button class="btn custom-bsign me-2" style="margin-top: 2rem">Iniciar sesi&oacute;n</button></a>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div data-include="crearFanID.html"></div>
+        <div data-include="signin_login.html"></div>
 
     </body>
     <script>

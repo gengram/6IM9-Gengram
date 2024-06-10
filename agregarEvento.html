@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="elements/img/evently_ticket.png">
-        <title>Evently | Evento</title>
+        <title>Evently | Agregar</title>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -104,6 +104,30 @@
         .inactive:hover {
             color: #8A8A8A;
         }
+
+        .btn-nav {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:hover {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:focus {
+            background-color: transparent;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .btn-nav:active {
+            background-color: #4d5154;
+            color: #8A8A8A;
+            border: 0rem;
+        }
+        .dropdown-toggle:after {
+            display: none;
+        }
     </style>
     <script>
         function includeHTML() {
@@ -151,107 +175,121 @@
         </nav>
         <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
             <div class="row" style=" width: 65%">
-                <div class="col-4" >
+                <div class="col-2" >
                     <li class="nav-item me-5 ms-5">
-                        <a class="nav-link nav-L active" href="index.html">INICIO</a>
+                        <a class="nav-link nav-L active" aria-current="page" href="index.html">INICIO</a>
                     </li>
                 </div>
-                <div class="col-4">
+                <div class="col-2">
                     <li class="nav-item ms-5">
-                        <a class="nav-link nav-L inactive" href="index.html#recomendados">EVENTOS</a>
+                        <a class="nav-link nav-L inactive" href="eventos.html">EVENTOS</a>
                     </li>
                 </div>
-                <div class="col-4">
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <p class="btn btn-nav dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BOLETOS
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="eventos.html">Solicitar</a></li>
+                                <li><a class="dropdown-item" href="asignacionBoletos.html">Asignaci&oacute;n</a></li>
+                                <li><a class="dropdown-item" href="compraBoletos.html">Compra</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <div class="dropdown">
+                            <button class="btn btn-nav dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                                VALIDAR
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="validarBoleto.html">Boleto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-2">
                     <li class="nav-item ms-5">
-                        <a class="nav-link nav-L inactive" href="index.html#entrada" >ENTRADA</a>
+                        <a class="nav-link nav-L inactive" href="boletos.html" >ENTRADA</a>
+                    </li>
+                </div>
+                <div class="col-2" >
+                    <li class="nav-item me-5 ms-5">
+                        <a class="nav-link nav-L inactive" href="gestionar.html">GESTIONAR</a>
                     </li>
                 </div>
             </div>
         </ul>
-
         <div class="container">
             <div class="row mt-5">
-                <div class="col-4 mt-5">
-                    <div class="card cardE ms-5" style="width: 18rem; height: 25rem">
-                        <img src="elements/portadas/e18.jpg" class="card-img" style="height: 25rem" alt="...">
-                    </div>
+                <div class="col-1 mt-5"></div>
+                <div class="col-9 mt-5">
+                    <h1 class="text-light">Agregar Evento</h1>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-7 mt-5 text-light">
-                    <div class="mt-5">
-                        <h1 style="font-size: 50px">Soda stereo</h1>
-                        <div class="mt-5">
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px"><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</p>
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</p>
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px"><i class="bi bi-people-fill me-2"></i>1,000 asistentes</p>
-                            <p class="mb-1" style="color: #8A8A8A; font-size: 20px" class="ms-4 mt-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i></p>
+                <div class="col-2 mt-5">
+                </div>
+            </div>
+            <form action="../usernew?id=<%= inst_id%>" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+                <div class="row mt-4">
+                    <div class="col-1"></div>
+                    <div class="col-2" >
+                        <div class="btn card border bg-dark" id="image-card" style="width: 180px; height: 180px; background-color: #F8F9FA; border-color: #AFB2B3;">
+                            <div class="card-body text-center">
+                                <label for="inst_profile">
+                                    <p class="mt-3 mb-4"><i class="bi bi-plus-lg" style="color: #AFB2B3; font-size: 60px"></i></p>
+                                </label>
+                            </div>
                         </div>
-                        <div class="mt-4">
-                            <a href="compraBoletos.html"><button class="btn custom-bsign mt-5">Comprar boletos</button></a>
-                            <a href="solicitudEventos.html"><button class="btn custom-bsign mt-5 ms-3">Solicitar boletos</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row ms-4 mt-5 mb-5">
-                <div class="col-6 text-light">
-                    <h3>Descripci&oacute;n</h3>
-                    <p class="mt-4" style="font-weight: 100">Soda Stereo fue una de las bandas argentinas de pop/rock de los 80 y principios de los 90. Creada como trío en 1982, la banda estaba formada por el guitarrista y vocalista Gustavo Cerati, el bajista Zeta Bosio (nacido Héctor Bosio) y el batería Charly Alberti (nacido Carlos
-                        Ficcichia). Su influencia se extendió al resto de América Latina durante el apogeo de la banda. Durante el apogeo de la banda, y una exitosa reunión en 2007 demostró la
-                        de la popularidad de Soda Stereo. En un principio, el grupo influenciado por la música new wave y bandas como The Police, Television y Talking Heads. Al igual que esos grupos, Soda Stereo un estilo siempre cambiante basado en el pop, pero que a menudo exploraba elementos de la new wave, el ska, el reggae, el soul, el noise rock y la electrónica. La imagen también era importante para la banda, cuyos miembros se ocupaban de videoclips, espectáculos, ropa y diseño gráfico.
-                    </p>
-                </div>
-                <div class="col-6">
-                    <div class="card cardE ms-5" style="width: 100%; height: 100%">
-                        <img src="elements/img/soda.jpg" class="card-img " style="height: 100%" alt="...">
-                    </div>
-                </div>
-            </div>
-            <div class="row ms-4 mt-4">
-                <div class="col-12">
-                    <h3 style="color: #fff;  font-weight: 600;">Proximos eventos</h3>
-                </div>
-            </div>
-            <div class="row ms-4 mt-4">
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card cardE" style="width: 18rem; height: 9rem">
-                        <img src="elements/concierto/conc1.jpg" class="card-img" style="height: 9rem" alt="...">
-                    </div>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card cardE" style="width: 18rem; height: 9rem">
-                        <img src="elements/concierto/conc2.jpg" class="card-img" style="height: 9rem" alt="...">
-                    </div>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card cardE" style="width: 18rem; height: 9rem">
-                        <img src="elements/concierto/conc3.jpg" class="card-img" style="height: 9rem" alt="...">
-                    </div>
-                </div>
-            </div>
-            <div class="row ms-4 mt-4 mb-5">
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card cardE" style="width: 18rem; height: 9rem">
-                        <img src="elements/concierto/conc4.jpg" class="card-img" style="height: 9rem" alt="...">
-                    </div>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card cardE" style="width: 18rem; height: 9rem">
-                        <img src="elements/concierto/conc5.png" class="card-img" style="height: 9rem" alt="...">
-                    </div>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card cardE" style="width: 18rem; height: 9rem">
-                        <img src="elements/concierto/conc6.jpg" class="card-img" style="height: 9rem" alt="...">
-                    </div>
-                </div>
-            </div>
 
+                    </div>
+                    <div class="col-5 mt-3">
+                        <label for="exampleInputEmail1" class="form-label text-light">Portada del evento</label>
+                        <input class="form-control bg-dark text-light" type="file" name="inst_profile" id="inst_profile" required>
+                    </div>
+                    <div class="col-4 mt-3"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-4">
+                        <label for="exampleInputEmail1" class="form-label  text-light">Nombre</label>
+                        <input class="form-control bg-dark text-light" name="user_name" id="user_name"  type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="exampleInputEmail1" class="form-label  text-light">Ubicaci&oacute;n</label>
+                        <input class="form-control bg-dark text-light" type="text" name="user_pat "id="user_pat" placeholder="Paterno" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="exampleInputEmail1" class="form-label  text-light">Asistentes</label>
+                        <input class="form-control bg-dark text-light" type="text" name="user_mat" id="user_mat" placeholder="Materno" required>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                        <label for="exampleInputEmail1" class="form-label  text-light">Fecha y hora</label>
+                        <input type="datetime-local" class="form-control bg-dark text-light" name="user_email" id="user_email" placeholder="name@gmail.com" required>
+                    </div>
+                    <div class="col-5">
+                        <label for="exampleInputPassword1" class="form-label  text-light">Calificaci&oacute;n</label>
+                        <input type="text" name="user_pass" id="user_pass" class="form-control bg-dark text-light" placeholder="********" required>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
 
+                <div class="row mt-4">
+                    <div class="col-1"></div>
+                    <div class="col-10 text-start">
+                        <button type="submit" class="btn custom-bsign rounded-pill mt-2"><i class="bi bi-plus-lg me-2"></i>Agregar evento</button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </form>
         </div>
-        <div data-include="crearFanID.html"></div>
+        <div data-include="signin_login.html"></div>
 
     </body>
-    
 </html>
-

@@ -105,44 +105,6 @@
             color: #8A8A8A;
         }
 
-        .loader {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .loader::before,
-        .loader::after {
-            position: absolute;
-            content: "";
-            height: 18em;
-            width: 18em;
-            border: 1em solid #AF6FAF;
-            border-radius: 50%;
-            animation: loader_79178 2s linear infinite;
-        }
-
-        .loader::after {
-            opacity: 0;
-            animation-delay: 1s;
-        }
-
-        @keyframes loader_79178 {
-            0% {
-                border: 1em solid #AF6FAF;
-                transform: scale(0);
-                opacity: 1;
-            }
-
-            100% {
-                border: 0 solid #AF6FAF;
-                transform: scale(1);
-                opacity: 0;
-            }
-        }
-        
-        
         .btn-nav {
             background-color: transparent;
             color: #8A8A8A;
@@ -211,7 +173,7 @@
 
             </div>
         </nav>
-       <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
+        <ul class="nav justify-content-center shadow" style="background-color: #272727; position: fixed; z-index: 1000; width: 100%;">
             <div class="row" style=" width: 65%">
                 <div class="col-2" >
                     <li class="nav-item me-5 ms-5">
@@ -261,19 +223,29 @@
                 </div>
             </div>
         </ul>
-
         <div class="container">
-            <div class="row mt-5">
+            <div class="row mt-5 mb-5">
+                <div class="col-4 mt-5">
+                    <div class="card cardE ms-5" style="width: 18rem; height: 25rem">
+                        <img src="elements/portadas/e18.jpg" class="card-img" style="height: 25rem" alt="...">
+                    </div>
+                    <div class="mt-2 ms-5">
+                        <a href="validarBoleto.html"><button class="btn custom-bsign mt-3 ms-3">Validar boleto</button></a>
+                        <a href="validarFanID.html"><button class="btn custom-bsign mt-3 ms-3">Validar Fan-ID</button></a>
+                    </div>
+                </div>
                 <div class="col-4 mt-5 text-light">
-                    <h1 class="ms-5 mb-3">Fan-ID</h1>
+                    <h1 class="ms-5 mb-3">Boletos</h1>
                     <div class="card cardE ms-5" style="width: 39rem; height: 17rem; background-color: #AF6FAF; ">
                         <div class="row ms-3">
                             <div class="col-6">
-                                <div class="mt-5 ms-3">
-                                    <p class="mb-1" style="color: #fff; font-size: 17px">Nombre: Carlos Mart&iacute;nez L&oacute;pez</p>
-                                    <p class="mb-1" style="color: #fff; font-size: 17px">Fecha de nacimiento: 2 de enero de 1985</p>
-                                    <p class="mb-1" style="color: #fff; font-size: 17px">CURP: MALC850102HDFRRL08</p>
-                                    <p class="mb-1" style="color: #fff; font-size: 17px">Direcci&oacute;n: Calle Falsa 123, Colonia Inventada,CDMX</p>
+                                <h3 class="mt-5 ms-3" style="color: #272727">Soda stereo</h3>
+                                <div class="mt-3 ms-3">
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><svg class="me-2" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h48v48H0V0z" id="a"></path></defs><clipPath id="b"><use overflow="visible" xlink:href="#a"></use></clipPath><path clip-path="url(#b)" d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z" fill="#fff" class="fill-000000"></path></svg>
+                                    Asiento: A124</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px">Folio: 152368</p>
                                 </div>
                             </div>
                             <div class="col-6 mt-3">
@@ -283,40 +255,53 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-2 ms-5">
-                        <button id="showButton" class="btn custom-bsign mt-3 ms-1">Validar Fan-ID</button>
-                    </div>
-                </div>
-                <div class="col-4 mt-5">
 
-                </div>
-                <div class="col-4 " style="margin-top: 7rem">
-                    <div class="loader" style="display: none; margin-left: 5.5rem"></div>
-                    <div class="row ms-3">
-                        <div class="message text-light mt-5 ms-5" style="display: none"><h1 class="mt-2 ms-3">Fan-ID valido</h1></div>
+                    <div class="card cardE ms-5 mt-2" style="width: 39rem; height: 17rem; background-color: #5D5AE3; ">
+                        <div class="row ms-3">
+                            <div class="col-6">
+                                <h3 class="mt-5 ms-3" style="color: #272727">Soda stereo</h3>
+                                <div class="mt-3 ms-3">
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><svg class="me-2" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h48v48H0V0z" id="a"></path></defs><clipPath id="b"><use overflow="visible" xlink:href="#a"></use></clipPath><path clip-path="url(#b)" d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z" fill="#fff" class="fill-000000"></path></svg>
+                                    Asiento: A125</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px">Folio: 152368</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-3">
+                                <div class="card cardE ms-3 mt-4" style="width: 12rem; height: 12rem">
+                                    <img src="elements/img/qr.png" class="card-img" style="height: 12rem; width: 12rem;" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card cardE ms-5 mt-2" style="width: 39rem; height: 17rem; background-color: #25ce7b; ">
+                        <div class="row ms-3">
+                            <div class="col-6">
+                                <h3 class="mt-5 ms-3" style="color: #272727">Soda stereo</h3>
+                                <div class="mt-3 ms-3">
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-calendar-week-fill me-2"></i>23 de mayo - 13:30 hrs</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><svg class="me-2" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h48v48H0V0z" id="a"></path></defs><clipPath id="b"><use overflow="visible" xlink:href="#a"></use></clipPath><path clip-path="url(#b)" d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z" fill="#fff" class="fill-000000"></path></svg>
+                                    Asiento: A126</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px"><i class="bi bi-geo-alt-fill me-2"></i>Teatro Metropolitan</p>
+                                    <p class="mb-1" style="color: #fff; font-size: 20px">Folio: 152368</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-3">
+                                <div class="card cardE ms-3 mt-4" style="width: 12rem; height: 12rem">
+                                    <img src="elements/img/qr.png" class="card-img" style="height: 12rem; width: 12rem;" alt="...">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="col-4 mt-5"> </div>
             </div>
+
         </div>
-       <div data-include="signin_login.html"></div>
+        <div data-include="signin_login.html"></div>
 
     </body>
 
-    <script>
-        document.getElementById('showButton').addEventListener('click', function () {
-            var loader = document.querySelector('.loader');
-            var message = document.querySelector('.message');
-
-            // Muestra el loader
-            loader.style.display = 'block';
-            message.style.display = 'none';
-
-            // Espera 3 segundos
-            setTimeout(function () {
-                // Oculta el loader y muestra el mensaje
-                loader.style.display = 'none';
-                message.style.display = 'block';
-            }, 2500);
-        });
-    </script>
 </html>
